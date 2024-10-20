@@ -2,6 +2,21 @@ const btnAdd = document.querySelector(".todo__create__button");
 const txtTodo = document.querySelector(".todo__input");
 const todoContainer = document.querySelector(".todo__container");
 
+// funcion for get current time
+function updateTime() {
+  const now = new Date();
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  };
+  clock.innerHTML = now.toLocaleTimeString("en-US", options);
+}
+
+// call the updateTime function in every 1sec
+setInterval(updateTime, 1000);
+
 const todoValues = [];
 let todoElements = [];
 
